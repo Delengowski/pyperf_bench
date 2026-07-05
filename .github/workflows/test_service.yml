@@ -1,0 +1,18 @@
+name: Test Environment
+
+on:
+  workflow_dispatch:
+
+jobs:
+  environment:
+    runs-on: self-hosted
+
+    steps:
+      - name: Show environment
+        run: |
+          which python
+          python --version
+          which clang
+          which ccache
+          echo $CONDA_PREFIX
+          ccache --show-stats
