@@ -99,6 +99,9 @@ jobs:
       run: |-
         echo "CC=/home/delengowski/miniforge3/envs/pyperf_bench_runner/bin/ccache /home/delengowski/miniforge3/envs/pyperf_bench_runner/bin/clang" >> $GITHUB_ENV
         echo "CXX=/home/delengowski/miniforge3/envs/pyperf_bench_runner/bin/ccache /home/delengowski/miniforge3/envs/pyperf_bench_runner/bin/clang++" >> $GITHUB_ENV
+        echo "LLVM_AR=/home/delengowski/miniforge3/envs/pyperf_bench_runner/bin/llvm-ar" >> $GITHUB_ENV
+        echo "LLVM_PROFDATA=/home/delengowski/miniforge3/envs/pyperf_bench_runner/bin/llvm-profdata" >> $GITHUB_ENV
+        echo "PYTHON_CONFIGURE_FLAGS=--with-lto=full LDFLAGS=-fuse-ld=lld" >> $GITHUB_ENV
         echo "BENCHMARK_MACHINE_NICKNAME=linux" >> $GITHUB_ENV
     - name: Checkout benchmarking
       uses: actions/checkout@v4

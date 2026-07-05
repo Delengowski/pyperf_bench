@@ -48,8 +48,13 @@ os = "linux"
 arch = "x86_64"
 hostname = "delengowski"
 available = true
-env.CC = "/home/delengowski/miniforge3/envs/pyperf_bench_runner/bin/ccache /home/delengowski/miniforge3/envs/pyperf_bench_runner/bin/clang"
-env.CXX = "/home/delengowski/miniforge3/envs/pyperf_bench_runner/bin/ccache /home/delengowski/miniforge3/envs/pyperf_bench_runner/bin/clang++"
+
+[runners.linux.env]
+CC = "/home/delengowski/miniforge3/envs/pyperf_bench_runner/bin/ccache /home/delengowski/miniforge3/envs/pyperf_bench_runner/bin/clang"
+CXX = "/home/delengowski/miniforge3/envs/pyperf_bench_runner/bin/ccache /home/delengowski/miniforge3/envs/pyperf_bench_runner/bin/clang++"
+LLVM_AR = "/home/delengowski/miniforge3/envs/pyperf_bench_runner/bin/llvm-ar"
+LLVM_PROFDATA = "/home/delengowski/miniforge3/envs/pyperf_bench_runner/bin/llvm-profdata"
+PYTHON_CONFIGURE_FLAGS = "--with-lto=full LDFLAGS=-fuse-ld=lld"
 
 [runners.windows]
 os = "windows"
