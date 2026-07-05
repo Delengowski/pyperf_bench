@@ -16,3 +16,5 @@ jobs:
           which ccache
           echo $CONDA_PREFIX
           ccache --show-stats
+          echo $CC
+          echo $CXX
